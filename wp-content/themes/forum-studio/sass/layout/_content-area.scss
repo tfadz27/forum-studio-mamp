@@ -5,12 +5,22 @@
   padding-bottom: 50px;
 }
 
-.fs-main-no-sidebar {
-  padding: 36px;
-  width: 80%;
-}
+.fs-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px 36px;
+  width: 100%;
 
-.fs-main-with-sidebar {
-  padding: 36px;
-  width: 80%;
+  &__col-9 {
+    flex: 9;
+  }
+
+  &__col-3 {
+    flex: 3;
+    margin-left: 30px;
+
+    .fs-h5 {
+      margin-bottom: 20px;
+    }
+  }
 }
