@@ -647,6 +647,31 @@ a {
     .fs-3column-blocks__link a:hover {
       text-decoration: underline; }
 
+.fs-leaders {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.fs-leadership-person {
+  margin-right: 20px; }
+  .fs-leadership-person .name {
+    font-weight: bold; }
+
+.fs-leadership-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .fs-leadership-card a {
+    color: inherit;
+    text-decoration: none; }
+
 .fs-contact .fs-h1 {
   margin-bottom: 12px; }
 .fs-contact .fs-h4 {

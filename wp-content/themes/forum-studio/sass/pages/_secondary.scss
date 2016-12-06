@@ -64,6 +64,30 @@
   }
 }
 
+// Leadership
+
+.fs-leaders {
+  display: flex;
+}
+
+.fs-leadership-person {
+  margin-right: 20px;
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+.fs-leadership-card {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
 // Contact
 
 .fs-contact {
