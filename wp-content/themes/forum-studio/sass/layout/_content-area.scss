@@ -11,16 +11,33 @@
   padding: 30px 36px;
   width: 100%;
 
+// Main Column
   &__col-9 {
     flex: 9;
   }
 
+  // Middle Column
+    &__col-7 {
+      flex: 7;
+    }
+
+// Sidebar
   &__col-3 {
     flex: 3;
     margin-left: 30px;
 
     .fs-h5 {
       margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
