@@ -1,6 +1,8 @@
 // Slick Slider
 
-.fs-slider {
+.fs-slider,
+.fs-slider__people {
+
   position: relative;
 
   .slick-next {
@@ -22,6 +24,7 @@
     z-index: 2;
   }
 }
+
 
 .slick-dots {
   display: flex;

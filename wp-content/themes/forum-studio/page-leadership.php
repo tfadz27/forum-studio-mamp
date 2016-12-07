@@ -6,13 +6,26 @@
 <div id="primary" class="content-area">
   
   <main id="main" class="site-main fs-main" role="main">
+
+    <section class="fs-slider__people">
+        <?php if(have_rows('people_slider')) : while(have_rows('people_slider')) : the_row(); 
+            $sliderImage = get_sub_field('image');
+          ?>
+        <div>
+         <div class="fs-slide" style="background:url(<?php echo $sliderImage['url']; ?>) no-repeat;background-size: cover;">
+         </div>
+        </div>
+       <?php endwhile; endif; ?>
+    </section>
+
+
+
  
       <section class="fs-container">
         <div class="fs-container__col-9">
-        <h1 class="fs-h1">Leadership</h1>
-        <h4 class="fs-h4"><?php the_field('leadership_title'); ?></h4>
-        
-        <div style="width: 100%;max-width: 700px;"><?php the_field('leadership_content'); ?></div>
+          <h1 class="fs-h1">Leadership</h1>
+            <h4 class="fs-h4"><?php the_field('people_title'); ?></h4>
+            <div class="fs-leadership__content"><?php the_field('people_content'); ?></div>
         </div>
 
          <aside class="fs-container__col-3 fs-leadership-sidebar">
@@ -26,7 +39,7 @@
         </aside>
           
           <section class="fs-leaders">
-            <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'post_type' => array('leadership') ));
+            <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'order' => 'ASC', 'post_type' => array('leadership') ));
             while( $recentPosts->have_posts() ) :  $recentPosts->the_post();  ?>
                 
                 <article class="fs-leadership-person">
@@ -52,11 +65,25 @@
       </section>
   </main><!-- .site-main -->
 
+   <script type="text/javascript">
+    jQuery(function($) {
+      $('.fs-slider__people').slick({
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        arrows: true,
+        responsive: true,
+        cssEase: 'linear'
+    });
+  });
+
+  </script>
+
   <?php get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
-
-
 
 
 <?php get_sidebar(); ?>
