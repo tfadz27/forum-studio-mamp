@@ -21,11 +21,12 @@ get_header(); ?>
 		      		<span class="phone"><?php the_field('phone'); ?></span>
 		      		<a href="mailto: <?php the_field('email'); ?>"><?php the_field('email'); ?></a>
 		      </div>
-
+					
 					<nav class="fs-leadership__nav">
-		      	<span class="fs-leadership__nav--prev"><?php previous_post_link( '%link','Previous Profile' ) ?></span> 
-		      	<span class="fs-leadership__nav--next"><?php next_post_link( '%link','Next Profile' ) ?></span>
-		      </nav>
+						<span class="fs-leadership__nav--prev"><?php c2c_previous_or_loop_post_link('%link','Previous Profile') ?></span>
+						<span class="fs-leadership__nav--next"><?php c2c_next_or_loop_post_link('%link','Next Profile') ?></span>
+					 </nav>
+
         </div>
         
 

@@ -654,14 +654,21 @@ a {
   display: -ms-flexbox;
   display: flex;
   font-size: 13px;
-  padding-top: 30px; }
+  padding-top: 30px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .fs-leadership-sidebar {
   margin-top: 45px; }
 
 .fs-leadership-person {
-  margin-right: 30px;
-  max-width: 320px; }
+  width: 275px; }
   .fs-leadership-person .name-title {
     color: #969696;
     margin-bottom: 5px;
@@ -722,6 +729,8 @@ a {
     font-size: 14px;
     color: #969696;
     font-weight: 100; }
+    .fs-leadership__nav a:hover {
+      color: #ee3224; }
   .fs-leadership__nav--prev:before {
     content: "<<";
     color: #ee3224;
