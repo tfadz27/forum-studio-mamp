@@ -23,10 +23,8 @@ get_header(); ?>
 		      </div>
 
 					<nav class="fs-leadership__nav">
-		      	<span class="fs-leadership__nav--prev"><?php previous_post_link('&laquo; &laquo; %',
- 'Toward The Past: ', 'no'); ?></span>
-		      	<span class="fs-leadership__nav--next"><?php next_post_link('&laquo; &laquo; %',
- 'Toward The Future: ', 'no'); ?></span>
+		      	<span class="fs-leadership__nav--prev"><?php previous_post_link( '%link','Previous Profile' ) ?></span> 
+		      	<span class="fs-leadership__nav--next"><?php next_post_link( '%link','Next Profile' ) ?></span>
 		      </nav>
         </div>
         
