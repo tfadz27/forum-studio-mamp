@@ -11,6 +11,10 @@
   padding: 30px 36px;
   width: 100%;
 
+    @media screen and(max-width: 800px) {
+      padding: 30px 20px;
+  }
+
 // Main Column
   &__col-9 {
     flex: 9;

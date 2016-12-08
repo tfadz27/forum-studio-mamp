@@ -575,21 +575,12 @@ a {
 .fs-home-hero {
   background-color: #eee;
   height: 773px; }
-
-.fs-slide {
-  height: 773px;
-  position: relative;
-  width: 100%; }
-  .fs-slide__title {
-    background: rgba(255, 255, 255, 0.5);
-    bottom: 28px;
-    left: 0;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-    padding: 15px 30px 15px 30px;
-    position: absolute;
-    text-transform: uppercase; }
+  @media screen and (max-width: 800px) {
+    .fs-home-hero {
+      height: 413px; } }
+  @media screen and (max-width: 480px) {
+    .fs-home-hero {
+      height: 172px; } }
 
 .fs-home-boiler {
   color: #8A898A;
@@ -671,10 +662,11 @@ a {
 .fs-leadership-person {
   margin-right: 30px;
   width: 20%; }
+  .fs-leadership-person:nth-child(4) {
+    margin-right: 10px; }
   .fs-leadership-person .name-title {
     color: #969696;
-    margin-bottom: 5px;
-    padding-right: 50px; }
+    margin-bottom: 5px; }
   .fs-leadership-person .name {
     font-weight: bold; }
 
@@ -688,7 +680,10 @@ a {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 20px; }
+  margin: 20px 0; }
+  @media screen and (max-width: 800px) {
+    .fs-leadership-card {
+      font-size: 12px; } }
   .fs-leadership-card a {
     color: inherit;
     text-decoration: none; }
@@ -856,6 +851,27 @@ a {
     width: 50px;
     z-index: 2; }
 
+.fs-slide {
+  height: 773px;
+  position: relative;
+  width: 100%; }
+  @media screen and (max-width: 800px) {
+    .fs-slide {
+      height: 413px; } }
+  @media screen and (max-width: 480px) {
+    .fs-slide {
+      height: 172px; } }
+  .fs-slide__title {
+    background: rgba(255, 255, 255, 0.5);
+    bottom: 28px;
+    left: 0;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding: 15px 30px 15px 30px;
+    position: absolute;
+    text-transform: uppercase; }
+
 .slick-dots {
   display: -webkit-box;
   display: -webkit-flex;
@@ -867,6 +883,9 @@ a {
           justify-content: flex-end;
   padding-right: 50px;
   bottom: -30px; }
+  @media screen and (max-width: 800px) {
+    .slick-dots {
+      padding-right: 20px; } }
   .slick-dots li button {
     border-radius: 50%;
     border: 1px solid #555555;
@@ -1069,6 +1088,9 @@ a {
           flex-flow: row wrap;
   padding: 30px 36px;
   width: 100%; }
+  @media screen and (max-width: 800px) {
+    .fs-container {
+      padding: 30px 20px; } }
   .fs-container__col-9 {
     -webkit-box-flex: 9;
     -webkit-flex: 9;

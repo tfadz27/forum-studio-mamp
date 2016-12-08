@@ -18,8 +18,6 @@
        <?php endwhile; endif; ?>
     </section>
 
-
-
  
       <section class="fs-container">
         <div class="fs-container__col-9">
@@ -38,31 +36,25 @@
           </ul>
         </aside>
           
-          <section class="fs-leaders">
-            <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'order' => 'ASC', 'post_type' => array('leadership') ));
-            while( $recentPosts->have_posts() ) :  $recentPosts->the_post();  ?>
-                
-                <article class="fs-leadership-person">
-                  <div class="thumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('image') ?></a></div>
-                   
-                   <div class="fs-leadership-card">
-                    <span class="name-title"><a href="<?php the_permalink(); ?>" class="name"><?php the_title(); ?></a>, 
-                    <span class="title"><?php the_field('title'); ?></span></span>
-                   
-                    <span class="phone"><?php the_field('phone'); ?></span>
-                    <span class="email"><a href="mailto: <?php the_field('email'); ?>"><?php the_field('email'); ?></a></span>
-                    <span class="fs-link"><a href="<?php the_permalink(); ?>">Read More</a></span>
-
-                  </div>
-                </article>
-                <?php endwhile;?>
+        <section class="fs-leaders">
+          <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'order' => 'ASC', 'post_type' => array('leadership') ));
+          while( $recentPosts->have_posts() ) :  $recentPosts->the_post();  ?>
+              
+            <article class="fs-leadership-person">
+              <div class="thumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('image') ?></a></div>
                
-          
-
+               <div class="fs-leadership-card">
+                <span class="name-title"><a href="<?php the_permalink(); ?>" class="name"><?php the_title(); ?></a>, 
+                <span class="title"><?php the_field('title'); ?></span></span>
+                <span class="phone"><?php the_field('phone'); ?></span>
+                <span class="email"><a href="mailto: <?php the_field('email'); ?>"><?php the_field('email'); ?></a></span>
+                <span class="fs-link"><a href="<?php the_permalink(); ?>">Read More</a></span>
+              </div>
+            </article>
+          <?php endwhile;?>
         </div>
 
-
-      </section>
+       </section>
   </main><!-- .site-main -->
 
    <script type="text/javascript">
