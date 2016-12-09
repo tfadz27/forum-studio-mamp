@@ -12,11 +12,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<section class="fs-container">
+		<section class="fs-container fs-leadership__single">
         <div class="fs-container__col-3">
         	<div class="thumb"><?php the_post_thumbnail('image') ?></a></div>
 
-					<div class="fs-leadership__single-card">
+					<div class="fs-leadership__single__card">
 						<h1 class="fs-h1">Contact</h1>
 		      		<span class="phone"><?php the_field('phone'); ?></span>
 		      		<a href="mailto: <?php the_field('email'); ?>"><?php the_field('email'); ?></a>
@@ -53,7 +53,7 @@ get_header(); ?>
 			
 
       </div><!-- col 7 -->
-      <div class="fs-container__col-3">
+      <div class="fs-container__col-2">
       	<h5 class="fs-h5">RELATED CONTENT</h5>
       </div>
          

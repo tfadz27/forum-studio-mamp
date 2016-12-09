@@ -20,12 +20,17 @@
     margin: 0;
     padding: 0 0 15px 0;
 
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
+
     li {
       display: inline-block;
 
       &:last-child {
         margin-right: 0;
       }
+
       &.current-menu-item > a {
         color: $fs-red;
       }
@@ -54,6 +59,10 @@
   transition: .3s all;
   max-width: 20px;
   width: 100%;
+
+  @media screen and (max-width: 520px) {
+    display: none;
+  }
 
   &:hover {
     cursor: pointer;
@@ -139,7 +148,7 @@
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block;
+  display: none;
 }
 
 @media screen and (min-width: 37.5em) {
