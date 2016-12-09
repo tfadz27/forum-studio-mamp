@@ -9,7 +9,7 @@
  
     <div class="fs-secondary__hero" style="background-image:url('<?php the_field('hero_header_image'); ?>');background-size: cover;"></div>
       <section class="fs-container">
-        <div class="fs-container__col-9">
+        <div class="fs-container__col-10">
         <!-- About Us Content Blocks -->
         <?php if(have_rows('about_us_content')) : while(have_rows('about_us_content')) : the_row(); 
         $aboutBlockTitle   = get_sub_field('title');

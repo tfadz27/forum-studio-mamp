@@ -15,9 +15,14 @@
     padding: 30px 20px;
   }
 
-  // Main Column
+  // Main Column with Sidebars
   &__col-9 {
     flex: 9;
+  }
+
+  // Main Column No Sidebar
+  &__col-10 {
+    flex: 10;
   }
 
   // Middle Column
