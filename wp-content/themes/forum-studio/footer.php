@@ -29,9 +29,8 @@
 
       </article>
 
-
-
       <article class="fs-footer__col">
+    
         <div id="fs-footer__partners">
           <?php
             if(is_active_sidebar('footer-partners')){
@@ -39,6 +38,12 @@
             }
           ?>
         </div>
+
+      </article>
+
+
+
+      <article class="fs-footer__col">
 
         <div id="fs-footer__address">
           <?php
@@ -65,7 +70,7 @@
 
         <div class="fs-footer__signup">
           <h3 class="fs-footer__signup--title">Sign Up</h3>
-            <div class="fs-footer__signup--content">Enter your email address to receive<br /> occasional updates from Forum Studio</div>
+            <div class="fs-footer__signup--content">Enter your email address to receive occasional updates from Forum Studio</div>
         </div>
       </article>
 
