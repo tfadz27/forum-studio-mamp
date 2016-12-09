@@ -25,7 +25,7 @@ get_header(); ?>
 					<nav class="fs-leadership__nav">
 						<span class="fs-leadership__nav--prev"><?php c2c_previous_or_loop_post_link('%link','Previous Profile') ?></span>
 						<span class="fs-leadership__nav--next"><?php c2c_next_or_loop_post_link('%link','Next Profile') ?></span>
-					 </nav>
+					</nav>
 
         </div>
         
