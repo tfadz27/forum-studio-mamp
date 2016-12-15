@@ -19,7 +19,7 @@
     </section>
 
  
-      <section class="fs-container">
+      <section class="fs-container fs-leadership">
         <div class="fs-container__col-9">
           <h1 class="fs-h1">Leadership</h1>
             <h4 class="fs-h4"><?php the_field('people_title'); ?></h4>
@@ -28,19 +28,20 @@
 
          <aside class="fs-container__col-3 fs-leadership-sidebar">
           <h5 class="fs-h5">LEADERSHIP BY INDUSTRY</h5>
-          <ul>
-          <li><a href="#">Corporate</a></li>
-          <li><a href="#">Industrial</a></li>
-          <li><a href="#">Institutional</a></li>
-          <li><a href="#">Residential</a></li>
-          </ul>
+            <ul class="filter">
+              <li><a href="#" data-filter="Corporate">Corporate</a></li>
+              <li><a href="#" data-filter="Industrial">Industrial</a></li>
+              <li><a href="#" data-filter="Institutional">Institutional</a></li>
+              <li><a href="#" data-filter="Residential">Residential</a></li>
+            </ul>
         </aside>
           
-        <section class="fs-leaders">
+        <section class="fs-leaders boxes">
+
           <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'order' => 'ASC', 'post_type' => array('leadership') ));
           while( $recentPosts->have_posts() ) :  $recentPosts->the_post();  ?>
-              
-            <article class="fs-leadership-person">
+
+            <article class="fs-leadership-person" data-category="<?php the_field('market'); ?>">
               <div class="thumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('image') ?></a></div>
                
                <div class="fs-leadership-card">
@@ -56,8 +57,8 @@
 
        </section>
   </main><!-- .site-main -->
-
-   <script type="text/javascript">
+  
+   <script>
     jQuery(function($) {
       $('.fs-slider__people').slick({
         dots: true,
@@ -72,6 +73,54 @@
   });
 
   </script>
+
+  <script>
+  (function($) {
+
+  'use strict';
+
+  var $filters = $('.filter [data-filter]'),
+    $boxes = $('.boxes [data-category]');
+
+  $filters.on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    
+    $filters.removeClass('active');
+    $this.addClass('active');
+
+    var $filterColor = $this.attr('data-filter');
+
+    if ($filterColor == 'all') {
+      $boxes.removeClass('is-animated')
+        .fadeOut().finish().promise().done(function() {
+          $boxes.each(function(i) {
+            $(this).addClass('is-animated').delay((i++) * 200).fadeIn();
+          });
+        });
+    } else {
+      $boxes.removeClass('is-animated')
+        .fadeOut().finish().promise().done(function() {
+          $boxes.filter('[data-category = "' + $filterColor + '"]').each(function(i) {
+            $(this).addClass('is-animated').delay((i++) * 200).fadeIn();
+          });
+        });
+    }
+  });
+
+})(jQuery);
+</script>
+
+   <!-- <script>
+    jQuery(function($) {
+
+      $('.fs-leadership-person').attr('data-category', function() {
+        $(this).text().replace(/^,*|,(?=,)|,$/g, '');
+
+      });
+
+    });
+   </script> -->
 
   <?php get_sidebar( 'content-bottom' ); ?>
 

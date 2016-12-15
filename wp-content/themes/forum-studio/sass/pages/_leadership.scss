@@ -1,5 +1,25 @@
 // Leadership
 
+.fs-leadership {
+  .fs-container__col-3 {
+    margin-top: 45px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .fs-container__col-9 {
+      flex: inherit;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .fs-container__col-3 {
+      margin: 0 0 20px 0;
+      border-top: 1px solid $fs-light-gray;
+      padding-top: 20px;
+    }
+  }
+}
+
 .fs-leaders {
   border-top: 1px solid $fs-gray;
   display: flex;
@@ -15,22 +35,19 @@
   width: 100%;
 }
 
-.fs-leadership-sidebar {
-  margin-top: 45px;
-}
-
 .fs-leadership-person {
   margin-right: 30px;
   width: 20%;
-  @media screen and(max-width: 700px) {
+
+  @media screen and (max-width: 700px) {
     width: 27%;
   }
 
-  @media screen and(max-width: 600px) {
+  @media screen and (max-width: 600px) {
     width: 42%;
   }
 
-  @media screen and(max-width: 480px) {
+  @media screen and (max-width: 480px) {
     width: 100%;
   }
 
@@ -96,7 +113,7 @@
     }
   }
 
-   @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px) {
     .fs-container__col-3 {
       flex: 0 0 43%;
       width: 50%;
@@ -106,7 +123,6 @@
       flex: 0 0 43%;
       width: 50%;
     }
-
   }
 
   @media screen and (max-width: 600px) {
@@ -137,11 +153,11 @@
     }
 
     .fs-container__col-2 {
-     flex: inherit;
+      flex: inherit;
       width: 100%;
       margin-left: 0;
+      margin-top: 0;
     }
-
   }
 }
 
@@ -205,6 +221,68 @@
   }
 }
 
+// Leadership Related Content Styles
+
+// Section row
+.fs-leader-related {
+  height: auto;
+  display: block;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-wrap: inherit;
+    flex-direction: column;
+  }
+}
+
+// Block
+.fs-leader-related__block {
+  max-width: 323px;
+  width: 100%;
+  height: auto;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 167px;
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 0 0 20px 0;
+    max-width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--image {
+    display: block;
+    height: 172px;
+    max-width: 323px;
+    width: 100%;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 167px;
+      height: 89px;
+    }
+
+    @media screen and (max-width: 600px) {
+      height: 172px;
+      max-width: 323px;
+    }
+  }
+
+  &--title {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
 .single-leadership {
   .post-navigation {
     display: none;
@@ -216,5 +294,20 @@
 
   .bio {
     font-size: 14px;
+  }
+}
+
+// Leadership Sort Filter
+
+.is-animated {
+  animation: .6s zoom-in;
+}
+
+@keyframes zoom-in {
+  0% {
+   transform: scale(.1);
+  } 
+  100% {
+    transform: none;
   }
 }

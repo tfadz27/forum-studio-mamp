@@ -51,10 +51,21 @@ get_header(); ?>
 					endwhile; // End of the loop.
 					?>  
 			
-
       </div><!-- col 7 -->
+
       <div class="fs-container__col-2">
       	<h5 class="fs-h5">RELATED CONTENT</h5>
+	      	<section class="fs-leader-related">
+	      		<?php if(have_rows('related_content')) : while(have_rows('related_content')) : the_row(); 
+			            $relatedImage = get_sub_field('related_image');
+			            $relatedTitle = get_sub_field('related_title');
+			          ?>
+			      	<article class="fs-leader-related__block">
+			         	<div class="fs-leader-related__block--image" style="background:url(<?php echo $relatedImage['url']; ?>) no-repeat;background-size: cover;"></div>
+			         	<h4 class="fs-leader-related__block--title"> <?php echo $relatedTitle; ?></h4>
+			        </article>
+		        <?php endwhile; endif; ?>
+		      </section>
       </div>
          
 		</main><!-- #main -->
