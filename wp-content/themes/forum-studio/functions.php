@@ -152,6 +152,7 @@ function forum_studio_scripts() {
 	wp_enqueue_script( 'forum-studio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'forum-studio-slick-slider', get_template_directory_uri() . '/js/slick-carousel/slick.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'forum-studio-scripts', get_template_directory_uri() . '/js/fs-scripts.js', array( 'jquery' ) );
+	wp_enqueue_script( 'forum-studio-filter-sort', get_template_directory_uri() . '/js/filter-sort.js', array( 'jquery' ) );
 
 	wp_enqueue_script( 'forum-studio-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
