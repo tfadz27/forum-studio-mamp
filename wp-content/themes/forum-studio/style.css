@@ -695,6 +695,21 @@ a {
       .fs-contact-list__item--link a:hover {
         text-decoration: underline; }
 
+.fs-leadership .fs-container__col-3 {
+  margin-top: 45px; }
+@media screen and (max-width: 800px) {
+  .fs-leadership .fs-container__col-9 {
+    -webkit-box-flex: inherit;
+    -webkit-flex: inherit;
+        -ms-flex: inherit;
+            flex: inherit;
+    width: 100%;
+    margin-top: 0; }
+  .fs-leadership .fs-container__col-3 {
+    margin: 0 0 20px 0;
+    border-top: 1px solid #8A898A;
+    padding-top: 20px; } }
+
 .fs-leaders {
   border-top: 1px solid #969696;
   display: -webkit-box;
@@ -712,9 +727,6 @@ a {
   margin-bottom: 25px;
   max-width: 700px;
   width: 100%; }
-
-.fs-leadership-sidebar {
-  margin-top: 45px; }
 
 .fs-leadership-person {
   margin-right: 30px;
@@ -839,7 +851,8 @@ a {
         -ms-flex: inherit;
             flex: inherit;
     width: 100%;
-    margin-left: 0; } }
+    margin-left: 0;
+    margin-top: 0; } }
 
 .fs-leadership__single__card {
   border: 1px solid #969696;
@@ -896,12 +909,93 @@ a {
     top: 1px;
     font-size: 16px; }
 
+.fs-leader-related {
+  height: auto;
+  display: block; }
+  @media screen and (max-width: 1024px) {
+    .fs-leader-related {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; } }
+  @media screen and (max-width: 600px) {
+    .fs-leader-related {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: inherit;
+          -ms-flex-wrap: inherit;
+              flex-wrap: inherit;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.fs-leader-related__block {
+  max-width: 323px;
+  width: 100%;
+  height: auto; }
+  @media screen and (max-width: 1024px) {
+    .fs-leader-related__block {
+      max-width: 167px;
+      margin-right: 20px; } }
+  @media screen and (max-width: 600px) {
+    .fs-leader-related__block {
+      margin: 0 0 20px 0;
+      max-width: 100%; }
+      .fs-leader-related__block:last-child {
+        margin-bottom: 0; } }
+  .fs-leader-related__block--image {
+    display: block;
+    height: 172px;
+    max-width: 323px;
+    width: 100%; }
+    @media screen and (max-width: 1024px) {
+      .fs-leader-related__block--image {
+        max-width: 167px;
+        height: 89px; } }
+    @media screen and (max-width: 600px) {
+      .fs-leader-related__block--image {
+        height: 172px;
+        max-width: 323px; } }
+  .fs-leader-related__block--title {
+    font-size: 12px;
+    font-weight: 300; }
+
 .single-leadership .post-navigation {
   display: none; }
 .single-leadership .entry-title {
   display: none; }
 .single-leadership .bio {
   font-size: 14px; }
+
+.fs-leadership-filter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .fs-leadership-filter button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: auto;
+    background: none;
+    color: #555555;
+    font-size: 14px;
+    margin-bottom: 6px; }
+    .fs-leadership-filter button:focus {
+      outline: none; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1253,7 +1347,16 @@ a {
     -webkit-flex: 2;
         -ms-flex: 2;
             flex: 2;
-    margin-left: 30px; }
+    margin-left: 30px;
+    min-width: 323px; }
+    @media screen and (max-width: 600px) {
+      .fs-container__col-2 {
+        border-top: 1px solid #8A898A; } }
+    .fs-container__col-2 .fs-h5 {
+      margin-bottom: 24px; }
+      @media screen and (max-width: 600px) {
+        .fs-container__col-2 .fs-h5 {
+          margin: 20px 0; } }
 
 /*--------------------------------------------------------------
 ## Footer

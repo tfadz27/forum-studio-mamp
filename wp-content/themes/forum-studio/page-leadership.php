@@ -28,20 +28,20 @@
 
          <aside class="fs-container__col-3 fs-leadership-sidebar">
           <h5 class="fs-h5">LEADERSHIP BY INDUSTRY</h5>
-            <ul class="filter">
-              <li><a href="#" data-filter="Corporate">Corporate</a></li>
-              <li><a href="#" data-filter="Industrial">Industrial</a></li>
-              <li><a href="#" data-filter="Institutional">Institutional</a></li>
-              <li><a href="#" data-filter="Residential">Residential</a></li>
-            </ul>
+            <div class="fs-leadership-filter filters">
+              <button class="filter Corporate-Market">Corporate</button>
+              <button class="filter Industrial-Market">Industrial</button>
+              <button class="filter Institutional-Market">Institutional</button>
+              <button class="filter Residential-Market">Residential</button>
+            </div>
         </aside>
           
-        <section class="fs-leaders boxes">
+        <section class="fs-leaders">
 
           <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'order' => 'ASC', 'post_type' => array('leadership') ));
           while( $recentPosts->have_posts() ) :  $recentPosts->the_post();  ?>
 
-            <article class="fs-leadership-person" data-category="<?php the_field('market'); ?>">
+            <article class="fs-leadership-person <?php the_field('market'); ?>">
               <div class="thumb"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('image') ?></a></div>
                
                <div class="fs-leadership-card">
@@ -71,58 +71,9 @@
         cssEase: 'linear'
     });
   });
-
   </script>
 
-  <script>
-  (function($) {
-
-  'use strict';
-
-  var $filters = $('.filter [data-filter]'),
-    $boxes = $('.boxes [data-category]');
-
-  $filters.on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    
-    $filters.removeClass('active');
-    $this.addClass('active');
-
-    var $filterColor = $this.attr('data-filter');
-
-    if ($filterColor == 'all') {
-      $boxes.removeClass('is-animated')
-        .fadeOut().finish().promise().done(function() {
-          $boxes.each(function(i) {
-            $(this).addClass('is-animated').delay((i++) * 200).fadeIn();
-          });
-        });
-    } else {
-      $boxes.removeClass('is-animated')
-        .fadeOut().finish().promise().done(function() {
-          $boxes.filter('[data-category = "' + $filterColor + '"]').each(function(i) {
-            $(this).addClass('is-animated').delay((i++) * 200).fadeIn();
-          });
-        });
-    }
-  });
-
-})(jQuery);
-</script>
-
-   <!-- <script>
-    jQuery(function($) {
-
-      $('.fs-leadership-person').attr('data-category', function() {
-        $(this).text().replace(/^,*|,(?=,)|,$/g, '');
-
-      });
-
-    });
-   </script> -->
-
-  <?php get_sidebar( 'content-bottom' ); ?>
+<?php get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
 
