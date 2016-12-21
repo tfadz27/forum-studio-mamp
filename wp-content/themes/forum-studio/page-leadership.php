@@ -111,16 +111,16 @@
 })(jQuery);
 </script>
 
-   <!-- <script>
+   <script>
     jQuery(function($) {
 
-      $('.fs-leadership-person').attr('data-category', function() {
-        $(this).text().replace(/^,*|,(?=,)|,$/g, '');
+      // $('.fs-leadership-person').attr('data-category', value).replace(/^,*|,(?=,)|,$/g, '');
 
-      });
+      var noCommas = $('.fs-leadership-person').attr('data-category').replace(/,/g , "");
+       $('.fs-leadership-person').attr('data-category', noCommas)
 
     });
-   </script> -->
+   </script>
 
   <?php get_sidebar( 'content-bottom' ); ?>
 
