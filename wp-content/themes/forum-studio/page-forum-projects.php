@@ -19,33 +19,45 @@
     <!-- end slideshow -->
 
 
-    <section class="fs-container">
+    <section>
     <!-- Projects Intro -->
-    <h3 class="fs-projects-intro"><?php the_field('projects_intro'); ?></h3>
+    <h3 class="fs-projects-intro">
+    
+    <?php the_field('projects_intro'); ?></h3>
+
+    <main class="fs-projects-container">
 
     <!-- Start Projects List -->
-      <?php $recentPosts = new WP_Query(array('posts_per_page' => -1, 'post_type' => array('projects') ));
-          while( $recentPosts->have_posts() ) :  $recentPosts->the_post();  ?>
 
-      <div class="fs-wrapper">
+    <?php $forumProjects = new WP_Query(array(
+          'post_type' => 'projects'
+      )); ?>
+
+    <?php while($forumProjects->have_posts()) : $forumProjects->the_post(); ?>
+     
+
+    <!-- Pull taxonomy name -->
+      <?php $terms = get_the_terms( $post->ID, 'expertise' ); ?>
+
+      <div class="fs-wrapper <?php foreach( $terms as $term ) echo ' ' . $term->slug; ?>">
 
           <!-- Project image thumbnail -->
           <div class="fs-project-thumb">
             <a href="<?php the_permalink(); ?>">
-              <?php 
-                $image = get_field('featured_thumbnail');
-                if( !empty($image) ): ?>
-                <img class="fs-project-thumb__img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-              <?php endif; ?>
-          </a>
-          <h3><?php the_title(); ?></h3>
+                <?php 
+                  $image = get_field('featured_thumbnail');
+                  if( !empty($image) ): ?>
+                  <img class="fs-project-thumb__img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                <?php endif; ?>
+              </a>
+              <h3><?php the_title(); ?></h3>
           </div>
 
           <!-- end project image -->
-
-      <?php endwhile;?>
       </div>
+       <?php endwhile; ?>
       <!-- End Projects List -->
+      </main>
 
       </section>
 

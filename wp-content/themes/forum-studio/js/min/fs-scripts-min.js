@@ -1,1 +1,0 @@
-jQuery(function($){$(".fs-search-button").click(function(){var e=$(".fs-search-form__header");e.toggleClass("fs-search-form__header--show")})});

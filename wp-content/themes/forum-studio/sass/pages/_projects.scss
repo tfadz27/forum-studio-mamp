@@ -1,6 +1,17 @@
 .fs-slider__projects {
 }
 
+.fs-projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.fs-wrapper {
+  max-width: 320px;
+  margin-right: 20px;
+}
+
 .fs-projects-intro {
 	font-size: 30px;
 	color: $fs-gray;
@@ -8,4 +19,10 @@
 	margin-bottom: 30px;
 	width: 100%;
 	max-width: 900px;
+}
+
+.fs-project-thumb {
+  h3 {
+    font-size: 12px;
+  }
 }
