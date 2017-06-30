@@ -25,15 +25,22 @@ browserSync.init(files, {
 
 // Configure Sass task to run when the specified .scss files change.
 // Browsersync will also reload browsers.
+
 gulp.task('sass', function() {
-    return gulp.src('sass/*.scss')
+    return gulp.src([
+        'node_modules/slick-carousel/slick/slick.css',
+        'node_modules/slick-carousel/slick/slick-theme.css',
+        'sass/style.scss'
+        ])
         .pipe(sass({
             'outputStyle': 'compressed'
         }))
         .pipe(postcss([ autoprefixer() ]))
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
 });
+
 
 
 gulp.task('js', function () {

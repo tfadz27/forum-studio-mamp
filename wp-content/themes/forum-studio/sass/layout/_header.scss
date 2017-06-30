@@ -32,10 +32,10 @@
   padding: 20px 10px;
   position: absolute;
   top: 99px;
+  transform: translateY(-20em);
+  transition: all .3s ease-in-out;
   width: 100%;
   z-index: 2;
-  transition: all .3s ease-in-out;
-  transform: translateY(-20em);
 
   &--show {
     transform: translateY(0);

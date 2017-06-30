@@ -154,8 +154,6 @@ add_action( 'widgets_init', 'forum_studio_widgets_init' );
  */
 function forum_studio_scripts() {
 	// Styles
-	wp_enqueue_style( 'slick-style', get_stylesheet_directory_uri().'/js/slick-carousel/slick.css' );
-  wp_enqueue_style( 'slick-theme', get_stylesheet_directory_uri().'/js/slick-carousel/slick-theme.css' );
 	wp_enqueue_style( 'forum-studio-style', get_stylesheet_uri() );
 
   // Scripts
